@@ -90,13 +90,14 @@ int Unit::attack(Unit &oppatk){
 
 int Unit::heal(){
 	int x;
-	x = rand()%21+10;
-	if(hp+x > hpmax) x=hpmax-hp;
-	else hp = hp+x;
+	x = rand()%21+10 ;
+	if(hp+x >= hpmax){
+	x = hpmax - hp;
+	hp = hpmax;
+	}
+	else hp = hp + x ;
 	return x;
-
-}
-
+};
 /////////////////////////////////////////////////////////////////////////////////////
 //Write function members isDead(), guard(), heal(), beAttacked(), and attack() here//
 /////////////////////////////////////////////////////////////////////////////////////
